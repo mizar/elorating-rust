@@ -1,5 +1,5 @@
 [package]
-name = "elorating"
+name = "ddreal"
 version = "0.1.0"
 authors = ["Mizar <mizar.jp@gmail.com>"]
 edition = "2018"
@@ -8,11 +8,3 @@ edition = "2018"
 
 [dependencies]
 num = "0.2"
-ddreal = { path = "./ddreal" }
-special = { path = "./special" }
-
-[workspace]
-members = [
-    "ddreal",
-    "special",
-]
