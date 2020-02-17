@@ -1,29 +1,31 @@
 use ddreal::DDReal;
 use num::{Float, FromPrimitive};
 
-// Ref: Gamma / Error Functions, Takuya OOURA
-// http://www.kurims.kyoto-u.ac.jp/~ooura/gamerf.html
-// http://www.kurims.kyoto-u.ac.jp/~ooura/gamerf-j.html
-// http://www.kurims.kyoto-u.ac.jp/~ooura/papers/jsiam95.pdf
-// http://www.kurims.kyoto-u.ac.jp/~ooura/gamerf.tar.gz
-// http://www.kurims.kyoto-u.ac.jp/~ooura/gamerf.zip
-
-// Ref: jStat - JavaScript Statistical Library
-// https://github.com/jstat/jstat
-
-// Ref: Boost Math
-// https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/index.html
-// https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/special.html
-// https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_gamma/lgamma.html
-// https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_beta/beta_function.html
-// https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_function.html
-// https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_inv_function.html
-// https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_erf/error_function.html
-// https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_erf/error_inv.html
-// https://www.boost.org/doc/libs/1_72_0/boost/math/special_functions/lanczos.hpp
-// https://www.boost.org/doc/libs/1_72_0/boost/math/special_functions/gamma.hpp
-// https://www.boost.org/doc/libs/1_72_0/boost/math/special_functions/beta.hpp
-// https://www.boost.org/doc/libs/1_72_0/boost/math/special_functions/erf.hpp
+/*
+- Ref: Gamma / Error Functions, Takuya OOURA
+    - http://www.kurims.kyoto-u.ac.jp/~ooura/gamerf.html
+    - http://www.kurims.kyoto-u.ac.jp/~ooura/gamerf-j.html
+    - http://www.kurims.kyoto-u.ac.jp/~ooura/papers/jsiam95.pdf
+    - http://www.kurims.kyoto-u.ac.jp/~ooura/gamerf.tar.gz
+    - http://www.kurims.kyoto-u.ac.jp/~ooura/gamerf.zip
+- Ref: jStat - JavaScript Statistical Library
+    - https://github.com/jstat/jstat
+- Ref: Boost Math
+    - https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/index.html
+    - https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/special.html
+    - https://www.boost.org/doc/libs/1_72_0/boost/math/special_functions/lanczos.hpp
+        - https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/lanczos.html
+    - https://www.boost.org/doc/libs/1_72_0/boost/math/special_functions/gamma.hpp
+        - https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_gamma/tgamma.html
+        - https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_gamma/lgamma.html
+    - https://www.boost.org/doc/libs/1_72_0/boost/math/special_functions/beta.hpp
+        - https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_beta/beta_function.html
+        - https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_function.html
+        - https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_inv_function.html
+    - https://www.boost.org/doc/libs/1_72_0/boost/math/special_functions/erf.hpp
+        - https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_erf/error_function.html
+        - https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_erf/error_inv.html
+*/
 
 pub trait SpecialFloat: Float + FromPrimitive {
     fn eloconst() -> Self;
