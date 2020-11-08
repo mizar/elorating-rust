@@ -3,6 +3,7 @@
 use ddreal::DDReal;
 use num::Float;
 use special::{elorating, erfc, erfcinv, ibetainvlogit, logitbetaln, SpecialFloat};
+use std::env;
 
 fn write_elorating_table<T: SpecialFloat>(pvec: Vec<f64>, win: f64, draw: f64, lose: f64) {
     let games = win + draw + lose;
@@ -20,8 +21,8 @@ fn write_elorating_table<T: SpecialFloat>(pvec: Vec<f64>, win: f64, draw: f64, l
     println!("DrawRate: {:.2}%", draw / games * 100.0);
 
     println!();
-    println!("   σ         x            p      |           EloRating estimated range           |  Δrange | error_low error_upp");
-    println!("---------------------------------+-----------------------------------------------+---------+----------------------");
+    println!("   σ         x            p      |           EloRating estimated range           |  Δrange  | error_l error_u");
+    println!("---------------------------------+-----------------------------------------------+----------+----------------");
 
     for p in pvec {
         let t_p = T::from_f64(p).unwrap();
@@ -32,7 +33,7 @@ fn write_elorating_table<T: SpecialFloat>(pvec: Vec<f64>, win: f64, draw: f64, l
         let lower = ibetainvlogit::<T>(t_p, t_win, t_lose1);
         let upper = ibetainvlogit::<T>(t_p, t_lose, t_win1).negate();
         println!(
-            "{:5.3}σ {:11.8}% {:11.8}% | {:+11.4} ({:6.2}%) ~ {:+11.4} ({:6.2}%) | {:7.2} | {:+9.1e} {:+9.1e}",
+            "{:5.3}σ{:12.8}%{:12.8}% |{:+12.4} ({:6.2}%) ~{:+12.4} ({:6.2}%) |{:9.2} |{:+8.0e}{:+8.0e}",
             erfcinv(p * 2.0) * std::f64::consts::SQRT_2,
             100.0 * (1.0 - p * 2.0),
             100.0 * p,
@@ -51,14 +52,36 @@ fn write_elorating_table<T: SpecialFloat>(pvec: Vec<f64>, win: f64, draw: f64, l
 
 fn main() {
     let pvec: Vec<f64> = vec![
+        0.500,
+        0.495,
+        0.490,
+        0.485,
+        0.480,
+        0.475,
+        0.470,
+        0.465,
+        0.460,
+        0.455,
+        0.450,
+        0.425,
+        0.400,
         0.375,
+        0.350,
+        0.325,
         // 0.382_924_922_548 ~= 0.5σ
         0.5 * erfc(0.5 * std::f64::consts::FRAC_1_SQRT_2),
+        0.300,
+        0.275,
         0.250,
+        0.225,
+        0.200,
+        0.175,
         // 0.682_689_492_137 ~= 1.0σ
         0.5 * erfc(1.0 * std::f64::consts::FRAC_1_SQRT_2),
+        0.150,
         0.125,
         0.100,
+        0.075,
         // 0.866_385_597_462 ~= 1.5σ
         0.5 * erfc(1.5 * std::f64::consts::FRAC_1_SQRT_2),
         0.050,
@@ -99,17 +122,46 @@ fn main() {
         0.000_000_000_500,
     ];
 
-    let (win, draw, lose): (f64, f64, f64) = (120.0, 0.0, 80.0);
-    write_elorating_table::<f64>(pvec.clone(), win, draw, lose);
-    write_elorating_table::<DDReal>(pvec.clone(), win, draw, lose);
+    let args: Vec<String> = env::args().collect();
 
-    let (win, draw, lose): (f64, f64, f64) = (987654321098765.0, 0.0, 123456789012345.0);
-    write_elorating_table::<f64>(pvec.clone(), win, draw, lose);
-    write_elorating_table::<DDReal>(pvec.clone(), win, draw, lose);
+    if args.len() < 4 {
+        usage();
+        return;
+    }
 
-    let (win, draw, lose): (f64, f64, f64) = (987654321098765.0, 1.0, 0.0);
-    write_elorating_table::<f64>(pvec.clone(), win, draw, lose);
-    write_elorating_table::<DDReal>(pvec.clone(), win, draw, lose);
+    let win = args[1].parse::<f64>().unwrap();
+    let draw = args[2].parse::<f64>().unwrap();
+    let lose = args[3].parse::<f64>().unwrap();
+    let opt = if args.len() < 5 { "" } else { args[4].as_str() };
+    match opt {
+        "f64" => write_elorating_table::<f64>(pvec.clone(), win, draw, lose),
+        "DDReal" => write_elorating_table::<DDReal>(pvec.clone(), win, draw, lose),
+        "both" => {
+            write_elorating_table::<f64>(pvec.clone(), win, draw, lose);
+            write_elorating_table::<DDReal>(pvec.clone(), win, draw, lose);
+        },
+        _ => write_elorating_table::<f64>(pvec.clone(), win, draw, lose)
+    }
+
+    /*
+    for (win, draw, lose) in ([
+        (0.0, 0.0, 0.0),
+        (1.0, 0.0, 0.0),
+        (0.0, 1.0, 0.0),
+        (1.0, 0.0, 1.0),
+        (120.0, 0.0, 80.0),
+        (987654321098765.0, 1.0, 0.0),
+        (987654321098765.0, 0.0, 123456789012345.0),
+    ]).iter() {
+        write_elorating_table::<f64>(pvec.clone(), *win, *draw, *lose);
+        write_elorating_table::<DDReal>(pvec.clone(), *win, *draw, *lose);
+    }
+    */
+
+}
+
+fn usage() {
+    println!("elorating.exe <win> <draw> <lose> [f64|DDReal]");
 }
 
 #[allow(dead_code)]

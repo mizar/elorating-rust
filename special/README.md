@@ -123,7 +123,7 @@
 
 ## 不完全ベータ関数の連分数展開
 
-![\operatorname{I}_x(a,b)=\frac{x^a(1-x)^b}{a\operatorname{B}(a,b)}\,\cfrac{1}{1+\cfrac{d_1}{1+\cfrac{d_2}{1+\cfrac{d_3}{1+\cfrac{d_4}{1+\cfrac{d_5}{1+\,\cdots}}}}}}\qquad(0<x<1)](https://latex.codecogs.com/svg.latex?%5Coperatorname%7BI%7D_x%28a%2Cb%29%3D%5Cfrac%7Bx%5Ea%281-x%29%5Eb%7D%7Ba%5Coperatorname%7BB%7D%28a%2Cb%29%7D%5C%2C%5Ccfrac%7B1%7D%7B1+%5Ccfrac%7Bd_1%7D%7B1+%5Ccfrac%7Bd_2%7D%7B1+%5Ccfrac%7Bd_3%7D%7B1+%5Ccfrac%7Bd_4%7D%7B1+%5Ccfrac%7Bd_5%7D%7B1+%5C%2C%5Ccdots%7D%7D%7D%7D%7D%7D%5Cqquad%280%3Cx%3C1%29)
+![\operatorname{I}_x(a,b)=\frac{x^a(1-x)^b}{a\operatorname{B}(a,b)}\,\cfrac{1}{1+\cfrac{d_1}{1+\cfrac{d_2}{1+\cfrac{d_3}{1+\cfrac{d_4}{1+\,\cdots}}}}}\qquad(0<x<1)](https://latex.codecogs.com/svg.latex?%5Coperatorname%7BI%7D_x%28a%2Cb%29%3D%5Cfrac%7Bx%5Ea%281-x%29%5Eb%7D%7Ba%5Coperatorname%7BB%7D%28a%2Cb%29%7D%5C%2C%5Ccfrac%7B1%7D%7B1+%5Ccfrac%7Bd_1%7D%7B1+%5Ccfrac%7Bd_2%7D%7B1+%5Ccfrac%7Bd_3%7D%7B1+%5Ccfrac%7Bd_4%7D%7B1+%5C%2C%5Ccdots%7D%7D%7D%7D%7D%5Cqquad%280%3Cx%3C1%29)
 
 ![d_1=-\frac{a+b}{a+1}x](https://latex.codecogs.com/svg.latex?d_1%3D-%5Cfrac%7Ba+b%7D%7Ba+1%7Dx)
 

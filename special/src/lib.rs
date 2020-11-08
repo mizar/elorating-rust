@@ -270,7 +270,7 @@ impl<T: SpecialFloat> Logit<T> {
         (-self.v).logdelogit()
     }
     pub fn elo(&self) -> f64 {
-        (T::eloconst() * self.v).to_f64().unwrap()
+        (std::f64::consts::LOG10_E * 400.0) * self.v.to_f64().unwrap()
     }
     pub fn negate(&self) -> Logit<T> {
         Logit { v: -self.v }
@@ -400,7 +400,7 @@ pub fn betacf<T: SpecialFloat>(x: T, a: T, b: T) -> T {
     let mut m2: T = T::one();
     let mut m1: T = T::one();
     let mut m3: T = T::one() - x * qab / qap;
-    for ni in 1..1024 {
+    for ni in 1..2048 {
         let n = T::from(ni as u64).unwrap();
         let n2 = n + n;
         let t1 = m1;
@@ -434,6 +434,7 @@ fn betaln<T: SpecialFloat>(a: T, b: T) -> T {
 }
 
 pub fn logitbetaln<T: SpecialFloat>(x: Logit<T>, a: T, b: T) -> T {
+    if x.logit().is_nan() { return T::nan() }
     if x.px() < (a + T::one()) / (a + b + (T::one() + T::one())) {
         if x.px().is_zero() {
             return T::neg_infinity();
@@ -499,7 +500,7 @@ pub fn ibetainvlogit<T: SpecialFloat>(p: T, a: T, b: T) -> Logit<T> {
     let afacmln2 = afac + two.ln();
     // atanh(2*x-1) = (ln(x)-ln(1-x))/2
     let ph = half * (p.ln() - (-p).ln_1p());
-    for j in 0..20 {
+    for j in 0..30 {
         if !x.logit().is_finite() || x.px().is_zero() || x.nx().is_zero() {
             break;
         }
@@ -509,7 +510,7 @@ pub fn ibetainvlogit<T: SpecialFloat>(p: T, a: T, b: T) -> Logit<T> {
         let lngrad = x.lnpx() * a + x.lnnx() * b - afacmln2 - lnbeta1 - lnbeta2;
         let grad = lngrad.exp();
         let t = err / grad;
-        // println!("j:{} x:{:?} lnbeta1:{:?} lnbeta2:{:?} err:{:?} grad:{:?} p:{:?} a:{:?} b:{:?}",j,x,lnbeta1,lnbeta2,err,grad,p,a,b);
+        //println!("j:{} x:{} lnbeta1:{} lnbeta2:{} err:{} grad:{} p:{} a:{} b:{}",j,x.logit().to_f64().unwrap(),lnbeta1.to_f64().unwrap(),lnbeta2.to_f64().unwrap(),err.to_f64().unwrap(),grad.to_f64().unwrap(),p.to_f64().unwrap(),a.to_f64().unwrap(),b.to_f64().unwrap());
         x = Logit::_logit(x.logit() - t);
         if t.abs() < eps * x.logit().abs() && j > 0 {
             break;
