@@ -19,16 +19,16 @@
 # ガンマ関数
 
 ![\begin{aligned}\Gamma(z)&=\int_0^\infty t^{z-1}\,e^{-t}\,\mathrm{d}t\qquad(\Re{z} > 0)\\\Gamma(z+1)&=z\,\Gamma(z)\\\Gamma(n+1)&=n!\\\Gamma\left(\frac{1}{2}+n\right)&=\frac{(2n-1)!!}{2^n}\sqrt{\pi}\qquad(n\ge 1)\\\Gamma\left(\frac{1}{2}-n\right)&=\frac{(-2)^n}{(2n-1)!!}\sqrt{\pi}\qquad(n\ge 1)\\\Gamma(z)\,\Gamma(1-z)&=-z\,\Gamma(z)\,\Gamma(-z)=\frac{\pi}{\sin\pi{z}}\\\end{aligned}](https://latex.codecogs.com/svg.latex?%5Cbegin%7Baligned%7D%5CGamma%28z%29%26%3D%5Cint_0%5E%5Cinfty%20t%5E%7Bz-1%7D%5C%2Ce%5E%7B-t%7D%5C%2C%5Cmathrm%7Bd%7Dt%5Cqquad%28%5CRe%7Bz%7D%20%3E%200%29%5C%5C%5CGamma%28z+1%29%26%3Dz%5C%2C%5CGamma%28z%29%5C%5C%5CGamma%28n+1%29%26%3Dn%21%5C%5C%5CGamma%5Cleft%28%5Cfrac%7B1%7D%7B2%7D+n%5Cright%29%26%3D%5Cfrac%7B%282n-1%29%21%21%7D%7B2%5En%7D%5Csqrt%7B%5Cpi%7D%5Cqquad%28n%5Cge%201%29%5C%5C%5CGamma%5Cleft%28%5Cfrac%7B1%7D%7B2%7D-n%5Cright%29%26%3D%5Cfrac%7B%28-2%29%5En%7D%7B%282n-1%29%21%21%7D%5Csqrt%7B%5Cpi%7D%5Cqquad%28n%5Cge%201%29%5C%5C%5CGamma%28z%29%5C%2C%5CGamma%281-z%29%26%3D-z%5C%2C%5CGamma%28z%29%5C%2C%5CGamma%28-z%29%3D%5Cfrac%7B%5Cpi%7D%7B%5Csin%5Cpi%7Bz%7D%7D%5C%5C%5Cend%7Baligned%7D)
-- https://www.boost.org/doc/libs/1_72_0/boost/math/special_functions/gamma.hpp
-- https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_gamma/tgamma.html
-- https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_gamma/lgamma.html
+- https://www.boost.org/doc/libs/1_74_0/boost/math/special_functions/gamma.hpp
+- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_gamma/tgamma.html
+- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_gamma/lgamma.html
 
 ## Lanczos近似
 
 - Lanczos近似 : [en.wikipedia: Lanczos approximation](https://en.wikipedia.org/wiki/Lanczos_approximation)
 - パラメータ算出 : [https://mrob.com/pub/ries/lanczos-gamma.html](https://mrob.com/pub/ries/lanczos-gamma.html)
-- https://www.boost.org/doc/libs/1_72_0/boost/math/special_functions/lanczos.hpp
-- https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/lanczos.html
+- https://www.boost.org/doc/libs/1_74_0/boost/math/special_functions/lanczos.hpp
+- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/lanczos.html
 
 ## 大浦による実ガンマ関数近似
 
@@ -41,9 +41,9 @@
 - [ja.wikipedia: 誤差関数](https://ja.wikipedia.org/wiki/%E8%AA%A4%E5%B7%AE%E9%96%A2%E6%95%B0)
 - [en.wikipedia: Error function](https://en.wikipedia.org/wiki/Error_function)
 - 誤差関数 (error function)
-- https://www.boost.org/doc/libs/1_72_0/boost/math/special_functions/erf.hpp
-- https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_erf/error_function.html
-- https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_erf/error_inv.html
+- https://www.boost.org/doc/libs/1_74_0/boost/math/special_functions/erf.hpp
+- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_erf/error_function.html
+- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_erf/error_inv.html
 
 ![\operatorname{erf}(x)=\frac{2}{\sqrt{\pi}}\int_0^x e^{-t^2}\mathrm{d}t](https://latex.codecogs.com/svg.latex?%5Coperatorname%7Berf%7D%28x%29%3D%5Cfrac%7B2%7D%7B%5Csqrt%7B%5Cpi%7D%7D%5Cint_0%5Ex%20e%5E%7B-t%5E2%7D%5Cmathrm%7Bd%7Dt)
 
@@ -73,10 +73,10 @@
 
 - [ja.wikipedia: ベータ関数](https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%BC%E3%82%BF%E9%96%A2%E6%95%B0)
 - [en.wikipedia: Beta function](https://en.wikipedia.org/wiki/Beta_function)
-- https://www.boost.org/doc/libs/1_72_0/boost/math/special_functions/beta.hpp
-- https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_beta/beta_function.html
-- https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_function.html
-- https://www.boost.org/doc/libs/1_72_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_inv_function.html
+- https://www.boost.org/doc/libs/1_74_0/boost/math/special_functions/beta.hpp
+- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_beta/beta_function.html
+- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_function.html
+- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_inv_function.html
 
 ![\begin{aligned}\operatorname{B}(x,y)&=\int_0^1 t^{x-1}\,(1-t)^{y-1}\,\mathrm{d}t\\\operatorname{B}(x,y)&=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}\\\operatorname{B}(x,y)&=\operatorname{B}(y,x)\\x\,\operatorname{B}(x,y+1)&=y\,\operatorname{B}(x+1,y)\\\operatorname{B}(x,y)&=\operatorname{B}(x+1,y)+\operatorname{B}(x,y+1)\\\operatorname{B}(x+1,y)&=\operatorname{B}(x,y)\cdot\frac{x}{x+y}\\\operatorname{B}(x,y+1)&=\operatorname{B}(x,y)\cdot\frac{y}{x+y}\\\operatorname{B}(x,y)\cdot\operatorname{B}(x+y,1-y)&=\frac{\pi}{x\sin(\pi y)}\\\operatorname{B}(x,1-x)&=\frac{\pi}{\sin(\pi x)}\\\operatorname{B}(1,x)&=\frac{1}{x}\\\operatorname{B}(1/2,1/2)&=\pi\end{aligned}](https://latex.codecogs.com/svg.latex?%5Cbegin%7Baligned%7D%5Coperatorname%7BB%7D%28x%2Cy%29%26%3D%5Cint_0%5E1%20t%5E%7Bx-1%7D%5C%2C%281-t%29%5E%7By-1%7D%5C%2C%5Cmathrm%7Bd%7Dt%5C%5C%5Coperatorname%7BB%7D%28x%2Cy%29%26%3D%5Cfrac%7B%5CGamma%28x%29%5CGamma%28y%29%7D%7B%5CGamma%28x+y%29%7D%5C%5C%5Coperatorname%7BB%7D%28x%2Cy%29%26%3D%5Coperatorname%7BB%7D%28y%2Cx%29%5C%5Cx%5C%2C%5Coperatorname%7BB%7D%28x%2Cy+1%29%26%3Dy%5C%2C%5Coperatorname%7BB%7D%28x+1%2Cy%29%5C%5C%5Coperatorname%7BB%7D%28x%2Cy%29%26%3D%5Coperatorname%7BB%7D%28x+1%2Cy%29+%5Coperatorname%7BB%7D%28x%2Cy+1%29%5C%5C%5Coperatorname%7BB%7D%28x+1%2Cy%29%26%3D%5Coperatorname%7BB%7D%28x%2Cy%29%5Ccdot%5Cfrac%7Bx%7D%7Bx+y%7D%5C%5C%5Coperatorname%7BB%7D%28x%2Cy+1%29%26%3D%5Coperatorname%7BB%7D%28x%2Cy%29%5Ccdot%5Cfrac%7By%7D%7Bx+y%7D%5C%5C%5Coperatorname%7BB%7D%28x%2Cy%29%5Ccdot%5Coperatorname%7BB%7D%28x+y%2C1-y%29%26%3D%5Cfrac%7B%5Cpi%7D%7Bx%5Csin%28%5Cpi%20y%29%7D%5C%5C%5Coperatorname%7BB%7D%28x%2C1-x%29%26%3D%5Cfrac%7B%5Cpi%7D%7B%5Csin%28%5Cpi%20x%29%7D%5C%5C%5Coperatorname%7BB%7D%281%2Cx%29%26%3D%5Cfrac%7B1%7D%7Bx%7D%5C%5C%5Coperatorname%7BB%7D%281/2%2C1/2%29%26%3D%5Cpi%5Cend%7Baligned%7D)
 
@@ -137,4 +137,4 @@
 
 ![\begin{aligned}&\quad\begin{pmatrix}P_n&Q_n\\R_n&S_n\end{pmatrix}\\&=\begin{pmatrix}0&a_1\\1&b_1\end{pmatrix}\begin{pmatrix}0&a_2\\1&b_2\end{pmatrix}\begin{pmatrix}0&a_3\\1&b_3\end{pmatrix}\begin{pmatrix}0&a_4\\1&b_4\end{pmatrix}\cdots\begin{pmatrix}0&a_{n-1}\\1&b_{n-1}\end{pmatrix}\begin{pmatrix}0&a_n\\1&b_n\end{pmatrix}\\&=\begin{pmatrix}a_1&a_1b_2\\b_1&a_2+b_1b_2\end{pmatrix}\begin{pmatrix}a_3&a_3b_4\\b_3&a_4+b_3b_4\end{pmatrix}\cdots\begin{pmatrix}a_{2m-1}&a_{2m-1}b_{2m}\\b_{2m-1}&a_{2m}+b_{2m-1}b_{2m}\end{pmatrix}\cdots\begin{pmatrix}0&a_{n-1}\\1&b_{n-1}\end{pmatrix}\begin{pmatrix}0&a_n\\1&b_n\end{pmatrix}\\\end{aligned}](https://latex.codecogs.com/svg.latex?%5Cbegin%7Baligned%7D%26%5Cquad%5Cbegin%7Bpmatrix%7DP_n%26Q_n%5C%5CR_n%26S_n%5Cend%7Bpmatrix%7D%5C%5C%26%3D%5Cbegin%7Bpmatrix%7D0%26a_1%5C%5C1%26b_1%5Cend%7Bpmatrix%7D%5Cbegin%7Bpmatrix%7D0%26a_2%5C%5C1%26b_2%5Cend%7Bpmatrix%7D%5Cbegin%7Bpmatrix%7D0%26a_3%5C%5C1%26b_3%5Cend%7Bpmatrix%7D%5Cbegin%7Bpmatrix%7D0%26a_4%5C%5C1%26b_4%5Cend%7Bpmatrix%7D%5Ccdots%5Cbegin%7Bpmatrix%7D0%26a_%7Bn-1%7D%5C%5C1%26b_%7Bn-1%7D%5Cend%7Bpmatrix%7D%5Cbegin%7Bpmatrix%7D0%26a_n%5C%5C1%26b_n%5Cend%7Bpmatrix%7D%5C%5C%26%3D%5Cbegin%7Bpmatrix%7Da_1%26a_1b_2%5C%5Cb_1%26a_2+b_1b_2%5Cend%7Bpmatrix%7D%20%5Cbegin%7Bpmatrix%7Da_3%26a_3b_4%5C%5Cb_3%26a_4+b_3b_4%5Cend%7Bpmatrix%7D%5Ccdots%5Cbegin%7Bpmatrix%7Da_%7B2m-1%7D%26a_%7B2m-1%7Db_%7B2m%7D%5C%5Cb_%7B2m-1%7D%26a_%7B2m%7D+b_%7B2m-1%7Db_%7B2m%7D%5Cend%7Bpmatrix%7D%5Ccdots%5Cbegin%7Bpmatrix%7D0%26a_%7Bn-1%7D%5C%5C1%26b_%7Bn-1%7D%5Cend%7Bpmatrix%7D%5Cbegin%7Bpmatrix%7D0%26a_n%5C%5C1%26b_n%5Cend%7Bpmatrix%7D%5C%5C%5Cend%7Baligned%7D)
 
-![\begin{aligned}S_n(x)&=b_0+\frac{P_n\,x+Q_n}{R_n\,x+S_n}\\&=b_0+\cfrac{a_1}{b_1+\cfrac{a_2}{b_2+\cfrac{a_3}{b_3+\,\cdots\,\cfrac{a_n}{b_n+x}}}}\\&\cong b_0+\frac{Q_n}{S_n}\qquad\left(\because\lim_{n\to\infty}\frac{P_n}{R_n}=\frac{Q_n}{S_n}\right)\end{aligned}](https://latex.codecogs.com/svg.latex?%5Cbegin%7Baligned%7DS_n%28x%29%26%3Db_0+%5Cfrac%7BP_n%5C%2Cx+Q_n%7D%7BR_n%5C%2Cx+S_n%7D%5C%5C%26%3Db_0+%5Ccfrac%7Ba_1%7D%7Bb_1+%5Ccfrac%7Ba_2%7D%7Bb_2+%5Ccfrac%7Ba_3%7D%7Bb_3+%5C%2C%5Ccdots%5C%2C%5Ccfrac%7Ba_n%7D%7Bb_n+x%7D%7D%7D%7D%5C%5C%26%5Ccong%20b_0+%5Cfrac%7BQ_n%7D%7BS_n%7D%5Cqquad%5Cleft%28%5Cbecause%5Clim_%7Bn%5Cto%5Cinfty%7D%5Cfrac%7BP_n%7D%7BR_n%7D%3D%5Cfrac%7BQ_n%7D%7BS_n%7D%5Cright%29%5Cend%7Baligned%7D)
+![\begin{aligned}S_n(x)&=b_0+\frac{P_n\,x+Q_n}{R_n\,x+S_n}\\&=b_0+\cfrac{a_1}{b_1+\cfrac{a_2}{b_2+\cfrac{a_3}{b_3+\,\cdots\,\cfrac{a_n}{b_n+x}}}}\\&\cong b_0+\frac{Q_n}{S_n}\qquad\left(\because\lim_{n\to\infty}\frac{P_n}{R_n}=\lim_{n\to\infty}\frac{Q_n}{S_n}\right)\end{aligned}](https://latex.codecogs.com/svg.latex?%5Cbegin%7Baligned%7DS_n%28x%29%26%3Db_0+%5Cfrac%7BP_n%5C%2Cx+Q_n%7D%7BR_n%5C%2Cx+S_n%7D%5C%5C%26%3Db_0+%5Ccfrac%7Ba_1%7D%7Bb_1+%5Ccfrac%7Ba_2%7D%7Bb_2+%5Ccfrac%7Ba_3%7D%7Bb_3+%5C%2C%5Ccdots%5C%2C%5Ccfrac%7Ba_n%7D%7Bb_n+x%7D%7D%7D%7D%5C%5C%26%5Ccong%20b_0+%5Cfrac%7BQ_n%7D%7BS_n%7D%5Cqquad%5Cleft%28%5Cbecause%5Clim_%7Bn%5Cto%5Cinfty%7D%5Cfrac%7BP_n%7D%7BR_n%7D%3D%5Clim_%7Bn%5Cto%5Cinfty%7D%5Cfrac%7BQ_n%7D%7BS_n%7D%5Cright%29%5Cend%7Baligned%7D)
