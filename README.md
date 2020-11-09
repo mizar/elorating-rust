@@ -21,7 +21,7 @@ cargo run --release <win> <lose> [<draw> [f64|dd|both]]
 - `<win>`: 勝ち数
 - `<lose>`: 負け数
 - `<draw>`: 引き分け数（0.5勝換算）
-- `f64|DDReal|both`: 計算精度
+- `f64|dd|both`: 計算精度
   - `f64`: 倍精度浮動小数点数
   - `dd`: 疑似四倍精度浮動小数点数 (double-double型)
   - `both`: `f64`と`dd`の両方で演算結果を出力
