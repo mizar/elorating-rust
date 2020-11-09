@@ -135,7 +135,7 @@ fn main() {
     let opt = if args.len() < 5 { "" } else { args[4].as_str() };
     match opt {
         "f64" => write_elorating_table::<f64>(pvec.clone(), win, draw, lose),
-        "DDReal" => write_elorating_table::<DDReal>(pvec.clone(), win, draw, lose),
+        "dd" => write_elorating_table::<DDReal>(pvec.clone(), win, draw, lose),
         "both" => {
             write_elorating_table::<f64>(pvec.clone(), win, draw, lose);
             write_elorating_table::<DDReal>(pvec.clone(), win, draw, lose);
@@ -161,7 +161,7 @@ fn main() {
 }
 
 fn usage() {
-    println!("elorating.exe <win> <lose> [<draw>] [f64|DDReal]");
+    println!("elorating.exe <win> <lose> [<draw> [f64|dd|both]]");
 }
 
 #[allow(dead_code)]
