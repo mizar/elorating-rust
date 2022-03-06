@@ -16,19 +16,25 @@
 
 ![\begin{aligned}1!!&=1\\3!!&=3\\5!!&=15\\7!!&=105\\9!!&=945\\11!!&=10395\\13!!&=135135\\15!!&=2027025\end{aligned}](https://latex.codecogs.com/svg.latex?%5Cbegin%7Baligned%7D1%21%21%26%3D1%5C%5C3%21%21%26%3D3%5C%5C5%21%21%26%3D15%5C%5C7%21%21%26%3D105%5C%5C9%21%21%26%3D945%5C%5C11%21%21%26%3D10395%5C%5C13%21%21%26%3D135135%5C%5C15%21%21%26%3D2027025%5Cend%7Baligned%7D)
 
+![\begin{aligned}(2k)!!&=2^kk!\qquad(k\geq 0)\\(2k-1)!!&=\frac{(2k)!}{2^kk!}=\frac{(2k)!}{(2k)!!}=\frac{(2k-1)!}{(2k-2)!!}\qquad(k\geq 1)\end{aligned}](http://latex.codecogs.com/svg.latex?%5Cbegin%7Baligned%7D(2k)!!&=2%5Ekk!%5Cqquad(k%5Cgeq%200)%5C%5C(2k-1)!!&=%5Cfrac%7B(2k)!%7D%7B2%5Ekk!%7D=%5Cfrac%7B(2k)!%7D%7B(2k)!!%7D=%5Cfrac%7B(2k-1)!%7D%7B(2k-2)!!%7D%5Cqquad(k%5Cgeq%201)%5Cend%7Baligned%7D)
+
 # ガンマ関数
 
-![\begin{aligned}\Gamma(z)&=\int_0^\infty t^{z-1}\,e^{-t}\,\mathrm{d}t\qquad(\Re{z} > 0)\\\Gamma(z+1)&=z\,\Gamma(z)\\\Gamma(n+1)&=n!\\\Gamma\left(\frac{1}{2}+n\right)&=\frac{(2n-1)!!}{2^n}\sqrt{\pi}\qquad(n\ge 1)\\\Gamma\left(\frac{1}{2}-n\right)&=\frac{(-2)^n}{(2n-1)!!}\sqrt{\pi}\qquad(n\ge 1)\\\Gamma(z)\,\Gamma(1-z)&=-z\,\Gamma(z)\,\Gamma(-z)=\frac{\pi}{\sin\pi{z}}\\\end{aligned}](https://latex.codecogs.com/svg.latex?%5Cbegin%7Baligned%7D%5CGamma%28z%29%26%3D%5Cint_0%5E%5Cinfty%20t%5E%7Bz-1%7D%5C%2Ce%5E%7B-t%7D%5C%2C%5Cmathrm%7Bd%7Dt%5Cqquad%28%5CRe%7Bz%7D%20%3E%200%29%5C%5C%5CGamma%28z%2B1%29%26%3Dz%5C%2C%5CGamma%28z%29%5C%5C%5CGamma%28n%2B1%29%26%3Dn%21%5C%5C%5CGamma%5Cleft%28%5Cfrac%7B1%7D%7B2%7D%2Bn%5Cright%29%26%3D%5Cfrac%7B%282n-1%29%21%21%7D%7B2%5En%7D%5Csqrt%7B%5Cpi%7D%5Cqquad%28n%5Cge%201%29%5C%5C%5CGamma%5Cleft%28%5Cfrac%7B1%7D%7B2%7D-n%5Cright%29%26%3D%5Cfrac%7B%28-2%29%5En%7D%7B%282n-1%29%21%21%7D%5Csqrt%7B%5Cpi%7D%5Cqquad%28n%5Cge%201%29%5C%5C%5CGamma%28z%29%5C%2C%5CGamma%281-z%29%26%3D-z%5C%2C%5CGamma%28z%29%5C%2C%5CGamma%28-z%29%3D%5Cfrac%7B%5Cpi%7D%7B%5Csin%5Cpi%7Bz%7D%7D%5C%5C%5Cend%7Baligned%7D)
-- https://www.boost.org/doc/libs/1_74_0/boost/math/special_functions/gamma.hpp
-- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_gamma/tgamma.html
-- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_gamma/lgamma.html
+![\begin{aligned}\Gamma(z)&=\int_0^\infty t^{z-1}\,e^{-t}\,\mathrm{d}t\qquad(\Re{z} > 0)\\\Gamma(z+1)&=z\,\Gamma(z)\\\Gamma(n+1)&=n!\\\Gamma\left(\frac{n}{2}\right)&=\frac{(n-2)!!}{2^\frac{n-1}{2}}\sqrt\pi\\\Gamma\left(\frac{1}{2}+n\right)&=\frac{(2n-1)!!}{2^n}\sqrt\pi\,=\,\frac{(2n)!}{4^nn!}\sqrt\pi\qquad(n\ge 1)\\\Gamma\left(\frac{1}{2}-n\right)&=\frac{(-2)^n}{(2n-1)!!}\sqrt\pi\,=\,\frac{(-4)^nn!}{(2n)!}\sqrt\pi\qquad(n\ge 1)\\\Gamma(z)\,\Gamma(1-z)&=-z\,\Gamma(z)\,\Gamma(-z)=\frac{\pi}{\sin\pi{z}}\\\end{aligned}](http://latex.codecogs.com/svg.latex?%5Cbegin%7Baligned%7D%5CGamma(z)&=%5Cint_0%5E%5Cinfty%20t%5E%7Bz-1%7D%5C,e%5E%7B-t%7D%5C,%5Cmathrm%7Bd%7Dt%5Cqquad(%5CRe%7Bz%7D%20%3E%200)%5C%5C%5CGamma(z&plus;1)&=z%5C,%5CGamma(z)%5C%5C%5CGamma(n&plus;1)&=n!%5C%5C%5CGamma%5Cleft(%5Cfrac%7Bn%7D%7B2%7D%5Cright)&=%5Cfrac%7B(n-2)!!%7D%7B2%5E%5Cfrac%7Bn-1%7D%7B2%7D%7D%5Csqrt%5Cpi%5C%5C%5CGamma%5Cleft(%5Cfrac%7B1%7D%7B2%7D&plus;n%5Cright)&=%5Cfrac%7B(2n-1)!!%7D%7B2%5En%7D%5Csqrt%5Cpi%5C,=%5C,%5Cfrac%7B(2n)!%7D%7B4%5Enn!%7D%5Csqrt%5Cpi%5Cqquad(n%5Cge%201)%5C%5C%5CGamma%5Cleft(%5Cfrac%7B1%7D%7B2%7D-n%5Cright)&=%5Cfrac%7B(-2)%5En%7D%7B(2n-1)!!%7D%5Csqrt%5Cpi%5C,=%5C,%5Cfrac%7B(-4)%5Enn!%7D%7B(2n)!%7D%5Csqrt%5Cpi%5Cqquad(n%5Cge%201)%5C%5C%5CGamma(z)%5C,%5CGamma(1-z)&=-z%5C,%5CGamma(z)%5C,%5CGamma(-z)=%5Cfrac%7B%5Cpi%7D%7B%5Csin%5Cpi%7Bz%7D%7D%5C%5C%5Cend%7Baligned%7D)
+
+![\begin{aligned}\Gamma\left(\frac12\right)&=\sqrt{\pi}\,\approx\,1.772\,453\,850\,905\,516\,0273\\\Gamma(1)&=1\\\Gamma\left(\frac32\right)&=\frac12\sqrt{\pi}\,\approx\,0.886\,226\,925\,452\,758\,0137\\\Gamma(2)&=1\\\Gamma\left(\frac52\right)&=\frac34\sqrt{\pi}\,\approx\,1.329\,340\,388\,179\,137\,0205\\\Gamma(3)&=2\\\Gamma\left(\frac72\right)&=\frac{15}8\sqrt{\pi}\,\approx\,3.323\,350\,970\,447\,842\,5512\\\Gamma(4)&=6\\\Gamma\left(\frac92\right)&=\frac{105}{16}\sqrt{\pi}\,\approx\,11.631\,728\,396\,567\,448\,9291\\\Gamma(5)&=24\\\end{aligned}](http://latex.codecogs.com/svg.latex?%5Cbegin%7Baligned%7D%5CGamma%5Cleft(%5Cfrac12%5Cright)&=%5Csqrt%7B%5Cpi%7D%5C,%5Capprox%5C,1.772%5C,453%5C,850%5C,905%5C,516%5C,0273%5C%5C%5CGamma(1)&=1%5C%5C%5CGamma%5Cleft(%5Cfrac32%5Cright)&=%5Cfrac12%5Csqrt%7B%5Cpi%7D%5C,%5Capprox%5C,0.886%5C,226%5C,925%5C,452%5C,758%5C,0137%5C%5C%5CGamma(2)&=1%5C%5C%5CGamma%5Cleft(%5Cfrac52%5Cright)&=%5Cfrac34%5Csqrt%7B%5Cpi%7D%5C,%5Capprox%5C,1.329%5C,340%5C,388%5C,179%5C,137%5C,0205%5C%5C%5CGamma(3)&=2%5C%5C%5CGamma%5Cleft(%5Cfrac72%5Cright)&=%5Cfrac%7B15%7D8%5Csqrt%7B%5Cpi%7D%5C,%5Capprox%5C,3.323%5C,350%5C,970%5C,447%5C,842%5C,5512%5C%5C%5CGamma(4)&=6%5C%5C%5CGamma%5Cleft(%5Cfrac92%5Cright)&=%5Cfrac%7B105%7D%7B16%7D%5Csqrt%7B%5Cpi%7D%5C,%5Capprox%5C,11.631%5C,728%5C,396%5C,567%5C,448%5C,9291%5C%5C%5CGamma(5)&=24%5C%5C%5Cend%7Baligned%7D)
+
+- https://en.wikipedia.org/wiki/Particular_values_of_the_gamma_function
+- https://www.boost.org/doc/libs/1_78_0/boost/math/special_functions/gamma.hpp
+- https://www.boost.org/doc/libs/1_78_0/libs/math/doc/html/math_toolkit/sf_gamma/tgamma.html
+- https://www.boost.org/doc/libs/1_78_0/libs/math/doc/html/math_toolkit/sf_gamma/lgamma.html
 
 ## Lanczos近似
 
 - Lanczos近似 : [en.wikipedia: Lanczos approximation](https://en.wikipedia.org/wiki/Lanczos_approximation)
 - パラメータ算出 : [https://mrob.com/pub/ries/lanczos-gamma.html](https://mrob.com/pub/ries/lanczos-gamma.html)
-- https://www.boost.org/doc/libs/1_74_0/boost/math/special_functions/lanczos.hpp
-- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/lanczos.html
+- https://www.boost.org/doc/libs/1_78_0/boost/math/special_functions/lanczos.hpp
+- https://www.boost.org/doc/libs/1_78_0/libs/math/doc/html/math_toolkit/lanczos.html
 
 ## 大浦による実ガンマ関数近似
 
@@ -41,9 +47,9 @@
 - [ja.wikipedia: 誤差関数](https://ja.wikipedia.org/wiki/%E8%AA%A4%E5%B7%AE%E9%96%A2%E6%95%B0)
 - [en.wikipedia: Error function](https://en.wikipedia.org/wiki/Error_function)
 - 誤差関数 (error function)
-- https://www.boost.org/doc/libs/1_74_0/boost/math/special_functions/erf.hpp
-- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_erf/error_function.html
-- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_erf/error_inv.html
+- https://www.boost.org/doc/libs/1_78_0/boost/math/special_functions/erf.hpp
+- https://www.boost.org/doc/libs/1_78_0/libs/math/doc/html/math_toolkit/sf_erf/error_function.html
+- https://www.boost.org/doc/libs/1_78_0/libs/math/doc/html/math_toolkit/sf_erf/error_inv.html
 
 ![\operatorname{erf}(x)=\frac{2}{\sqrt{\pi}}\int_0^x e^{-t^2}\mathrm{d}t](https://latex.codecogs.com/svg.latex?%5Coperatorname%7Berf%7D%28x%29%3D%5Cfrac%7B2%7D%7B%5Csqrt%7B%5Cpi%7D%7D%5Cint_0%5Ex%20e%5E%7B-t%5E2%7D%5Cmathrm%7Bd%7Dt)
 
@@ -73,10 +79,10 @@
 
 - [ja.wikipedia: ベータ関数](https://ja.wikipedia.org/wiki/%E3%83%99%E3%83%BC%E3%82%BF%E9%96%A2%E6%95%B0)
 - [en.wikipedia: Beta function](https://en.wikipedia.org/wiki/Beta_function)
-- https://www.boost.org/doc/libs/1_74_0/boost/math/special_functions/beta.hpp
-- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_beta/beta_function.html
-- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_function.html
-- https://www.boost.org/doc/libs/1_74_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_inv_function.html
+- https://www.boost.org/doc/libs/1_78_0/boost/math/special_functions/beta.hpp
+- https://www.boost.org/doc/libs/1_78_0/libs/math/doc/html/math_toolkit/sf_beta/beta_function.html
+- https://www.boost.org/doc/libs/1_78_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_function.html
+- https://www.boost.org/doc/libs/1_78_0/libs/math/doc/html/math_toolkit/sf_beta/ibeta_inv_function.html
 
 ![\begin{aligned}\operatorname{B}(x,y)&=\int_0^1 t^{x-1}\,(1-t)^{y-1}\,\mathrm{d}t\\\operatorname{B}(x,y)&=\frac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}\\\operatorname{B}(x,y)&=\operatorname{B}(y,x)\\x\,\operatorname{B}(x,y+1)&=y\,\operatorname{B}(x+1,y)\\\operatorname{B}(x,y)&=\operatorname{B}(x+1,y)+\operatorname{B}(x,y+1)\\\operatorname{B}(x+1,y)&=\operatorname{B}(x,y)\cdot\frac{x}{x+y}\\\operatorname{B}(x,y+1)&=\operatorname{B}(x,y)\cdot\frac{y}{x+y}\\\operatorname{B}(x,y)\cdot\operatorname{B}(x+y,1-y)&=\frac{\pi}{x\sin(\pi y)}\\\operatorname{B}(x,1-x)&=\frac{\pi}{\sin(\pi x)}\\\operatorname{B}(1,x)&=\frac{1}{x}\\\operatorname{B}(1/2,1/2)&=\pi\end{aligned}](https://latex.codecogs.com/svg.latex?%5Cbegin%7Baligned%7D%5Coperatorname%7BB%7D%28x%2Cy%29%26%3D%5Cint_0%5E1%20t%5E%7Bx-1%7D%5C%2C%281-t%29%5E%7By-1%7D%5C%2C%5Cmathrm%7Bd%7Dt%5C%5C%5Coperatorname%7BB%7D%28x%2Cy%29%26%3D%5Cfrac%7B%5CGamma%28x%29%5CGamma%28y%29%7D%7B%5CGamma%28x+y%29%7D%5C%5C%5Coperatorname%7BB%7D%28x%2Cy%29%26%3D%5Coperatorname%7BB%7D%28y%2Cx%29%5C%5Cx%5C%2C%5Coperatorname%7BB%7D%28x%2Cy+1%29%26%3Dy%5C%2C%5Coperatorname%7BB%7D%28x+1%2Cy%29%5C%5C%5Coperatorname%7BB%7D%28x%2Cy%29%26%3D%5Coperatorname%7BB%7D%28x+1%2Cy%29+%5Coperatorname%7BB%7D%28x%2Cy+1%29%5C%5C%5Coperatorname%7BB%7D%28x+1%2Cy%29%26%3D%5Coperatorname%7BB%7D%28x%2Cy%29%5Ccdot%5Cfrac%7Bx%7D%7Bx+y%7D%5C%5C%5Coperatorname%7BB%7D%28x%2Cy+1%29%26%3D%5Coperatorname%7BB%7D%28x%2Cy%29%5Ccdot%5Cfrac%7By%7D%7Bx+y%7D%5C%5C%5Coperatorname%7BB%7D%28x%2Cy%29%5Ccdot%5Coperatorname%7BB%7D%28x+y%2C1-y%29%26%3D%5Cfrac%7B%5Cpi%7D%7Bx%5Csin%28%5Cpi%20y%29%7D%5C%5C%5Coperatorname%7BB%7D%28x%2C1-x%29%26%3D%5Cfrac%7B%5Cpi%7D%7B%5Csin%28%5Cpi%20x%29%7D%5C%5C%5Coperatorname%7BB%7D%281%2Cx%29%26%3D%5Cfrac%7B1%7D%7Bx%7D%5C%5C%5Coperatorname%7BB%7D%281/2%2C1/2%29%26%3D%5Cpi%5Cend%7Baligned%7D)
 
@@ -110,7 +116,7 @@
 
 ![\tanh^{-1}\left(-1+2\cdot \operatorname{I}_\frac{1}{1+e^{-x}}(a,b)\right)=\frac{1}{2}\ln\frac{\operatorname{I}_\frac{1}{1+e^{-x}}(a,b)}{\operatorname{I}_\frac{1}{1+e^x}(b,a)}](https://latex.codecogs.com/svg.latex?%5Ctanh%5E%7B-1%7D%5Cleft%28-1+2%5Ccdot%20%5Coperatorname%7BI%7D_%5Cfrac%7B1%7D%7B1+e%5E%7B-x%7D%7D%28a%2Cb%29%5Cright%29%3D%5Cfrac%7B1%7D%7B2%7D%5Cln%5Cfrac%7B%5Coperatorname%7BI%7D_%5Cfrac%7B1%7D%7B1+e%5E%7B-x%7D%7D%28a%2Cb%29%7D%7B%5Coperatorname%7BI%7D_%5Cfrac%7B1%7D%7B1+e%5Ex%7D%28b%2Ca%29%7D)
 
-![\frac{\partial}{\partial x}\tanh^{-1}\left(-1+2\cdot \operatorname{I}_\frac{1}{1+e^{-x}}(a,b)\right)=\frac{\left(\frac{1}{1+e^{-x}}\right)^a\left(\frac{1}{1+e^x}\right)^b}{2\operatorname{B}(a,b)\operatorname{I}_\frac{1}{1+e^{-x}}(a,b)\operatorname{I}_\frac{1}{1+e^x}(b,a)}](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cfrac%7B%5Cpartial%7D%7B%5Cpartial%20x%7D%5Ctanh%5E%7B-1%7D%5Cleft%28-1+2%5Ccdot%20%5Coperatorname%7BI%7D_%5Cfrac%7B1%7D%7B1+e%5E%7B-x%7D%7D%28a%2Cb%29%5Cright%29%3D%5Cfrac%7B%5Cleft%28%5Cfrac%7B1%7D%7B1+e%5E%7B-x%7D%7D%5Cright%29%5Ea%5Cleft%28%5Cfrac%7B1%7D%7B1+e%5Ex%7D%5Cright%29%5Eb%7D%7B2%5Coperatorname%7BB%7D%28a%2Cb%29%5Coperatorname%7BI%7D_%5Cfrac%7B1%7D%7B1+e%5E%7B-x%7D%7D%28a%2Cb%29%5Coperatorname%7BI%7D_%5Cfrac%7B1%7D%7B1+e%5Ex%7D%28b%2Ca%29%7D)
+![\frac{\partial}{\partial x}\tanh^{-1}\left(-1+2\cdot \operatorname{I}_\frac{1}{1+e^{-x}}(a,b)\right)=\frac{\left(\frac{1}{1+e^{-x}}\right)^a\left(\frac{1}{1+e^x}\right)^b}{2\operatorname{B}(a,b)\operatorname{I}_\frac{1}{1+e^{-x}}(a,b)\left(1-\operatorname{I}_\frac{1}{1+e^{-x}}(a,b)\right)}](https://latex.codecogs.com/svg.image?\frac{\partial}{\partial&space;x}\tanh^{-1}\left(-1&plus;2\cdot&space;\operatorname{I}_\frac{1}{1&plus;e^{-x}}(a,b)\right)=\frac{\left(\frac{1}{1&plus;e^{-x}}\right)^a\left(\frac{1}{1&plus;e^x}\right)^b}{2\operatorname{B}(a,b)\operatorname{I}_\frac{1}{1&plus;e^{-x}}(a,b)\left(1-\operatorname{I}_\frac{1}{1&plus;e^{-x}}(a,b)\right)})
 
 - 参考 wolframalpha:
   - [`ATanh[-1+2BetaRegularized[1/(1+e^(-x)),a,b]]`](https://www.wolframalpha.com/input/?i=ATanh%5B-1%2B2BetaRegularized%5B1%2F%281%2Be%5E%28-x%29%29%2Ca%2Cb%5D%5D&lang=ja)
